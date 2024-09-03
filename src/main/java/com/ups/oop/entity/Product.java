@@ -1,9 +1,11 @@
 package com.ups.oop.entity;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +14,15 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-
-public class Branch {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String branch_name;
-    private String store;
-    @OneToMany(mappedBy = "branches")
-    private List<Receipt> receipts = new ArrayList<>();
+    private String productId;
+    private String name;
+    private String supplierss;
+    private double price;
+    @ManyToOne
+    @JoinColumn(name = "distributor_id", nullable = true)
+    private Distributor distributor;
 }

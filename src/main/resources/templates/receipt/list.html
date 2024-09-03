@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Receipt List</title>
+    <style>
+        table , th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        padding: 10px;
+        width: 150px;
+        }
+
+        tr:first-child {
+        background: #add8e6;
+        }
+
+      tr {
+        background-color: #70f58580;
+      }
+
+      tr:hover{
+        box-shadow: 0px 2px 0px rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+      td{
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+<h2>Invoice</h2>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>serial</th>
+        <th>customer</th>
+        <th>date</th>
+        <th>totalprice</th>
+        <th>employee</th>
+        <th>paymentmethod</th>
+    </tr>
+    <tr th:each="rec: ${receipts}">
+        <th th:text="${rec.id}"></th>
+        <th th:text="${rec.serial}"></th>
+        <th th:text="${rec.client}"></th>
+        <th th:text="${rec.date}"></th>
+        <th th:text="${rec.total_price}"></th>
+        <th th:text="${rec.worker}"></th>
+        <th th:text="${rec.payment_method}"></th>
+    </tr>
+
+</table>
+</body>
+</html>

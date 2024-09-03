@@ -1,5 +1,6 @@
 package com.ups.oop.entity;
 
+import com.ups.oop.dto.Person;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,11 +1,13 @@
 package com.ups.oop.entity;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -13,12 +15,11 @@ import java.util.List;
 @Getter
 @Setter
 
-public class Branch {
+public class PaymentMeth {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String branch_name;
-    private String store;
-    @OneToMany(mappedBy = "branches")
-    private List<Receipt> receipts = new ArrayList<>();
+    private String method;
+
 }
+

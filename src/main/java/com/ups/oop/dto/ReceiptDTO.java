@@ -14,9 +14,9 @@ import java.util.Date;
 public class ReceiptDTO {
     private String id;
     private String serial;
-    private String customer;
+    private String client;
     private Date   date;
     private Double total_price;
-    private String employee;
+    private String worker;
     private String payment_method;
 }
