@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment Method List</title>
+    <style>
+        table , th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        padding: 10px;
+        width: 150px;
+        }
+
+        tr:first-child {
+        background: #add8e6;
+        }
+
+      tr {
+        background-color: #70f58580;
+      }
+
+      tr:hover{
+        box-shadow: 0px 2px 0px rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+      td{
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+<h2>List of Payment Methods</h2>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>method</th>
+    </tr>
+    <tr th:each="pay: ${paymentmethod}">
+        <th th:text="${pay.id}"></th>
+        <th th:text="${pay.method}"></th>
+    </tr>
+
+</table>
+</body>
+</html>

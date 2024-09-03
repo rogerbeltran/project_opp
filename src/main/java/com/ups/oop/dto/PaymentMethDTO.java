@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 
-public class PaymentMethodDTO {
+public class PaymentMethDTO {
     private String id;
     private String method;
 }
